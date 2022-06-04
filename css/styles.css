@@ -36,7 +36,7 @@ body {
 }
 
 
-/* Это стили для сайта СТУДИЯ */
+/* Это стили для сайта СТУДИЯ, секция header */
 
 .container {
     display: block;
@@ -75,21 +75,8 @@ body {
 
 .contact {
     display: flex;
-    margin-left: auto;    
-}
-
-.header-mail::before {
-    display: inline-block;
-    content:"";
-    width: 16px;
-    height: 12px;
-    background-image: 
-    url(../images/icon/envelope.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 10px;
-
-
+    margin-left: auto;
+    align-items: center;    
 }
 
 .header .container {
@@ -108,8 +95,7 @@ body {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
-    letter-spacing: 0.02em;
-    
+    letter-spacing: 0.02em;    
 }
 
 .nav-portfolio-item,
@@ -140,19 +126,27 @@ body {
     color:var(--brand-text-color);
 
     padding-top: 32px;
-    padding-bottom: 32px;
-    
+    padding-bottom: 32px;    
 }
 
-.header-tel-item {
-    margin-left: 50px;
+.mail-text,
+.tel-number {
+    margin-left: 10px;    
 }
 
 .header-mail:hover,
-.header-tel:hover,
+.header-tel:hover, 
 .footer-mail:hover,
 .footer-tel:hover {
-    color:var(--logo-web-color);
+    color: var(--logo-web-color);
+}
+
+.header-mail:hover .icon-envelope {
+    fill: var(--logo-web-color);
+}
+
+.header-tel:hover .icon-smartphone {
+    fill: var(--logo-web-color);
 }
 
 .header-mail:focus,
@@ -162,10 +156,23 @@ body {
     color:var(--logo-web-color);
 }
 
+.header-mail:focus .icon-envelope {
+    fill: var(--logo-web-color);
+}
+
+.header-tel:focus .icon-smartphone {
+    fill: var(--logo-web-color);
+}
+
+.header-tel-item {
+    margin-left: 30px;
+}
+
 .header {
     border: 1px solid #ECECEC;
 }
 
+/* Стилизация секции герой */
 .hero {
     background-color:var(--hero-bg-color);
     padding-top: 200px;
@@ -248,22 +255,22 @@ body {
 
 .icon-antena::before {
     background-image:
-    url(../images/icon/antenna\ 1.png);
+    url(../images/icon/antenna\ 1.svg);
 }
 
 .icon-clock::before {
     background-image:
-    url(../images/icon/clock\ 1.png);
+    url(../images/icon/clock\ 1.svg);
 }
 
 .icon-diagram::before {
     background-image:
-    url(../images/icon/diagram\ 1.png);
+    url(../images/icon/diagram\ 1.svg);
 }
 
 .icon-astronaut::before {
     background-image:
-    url(../images/icon/astronaut\ 1.png);
+    url(../images/icon/astronaut\ 1.svg);
 }
 
 .peculiarities-title {
@@ -359,7 +366,6 @@ body {
     letter-spacing: 0.03em;
     color:var(--accent-text-color);
     text-align: center;
-
     margin-bottom: 10px;
 }
 
@@ -389,11 +395,27 @@ body {
 }
 
 .cocial-icon-link {
-    display: block;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background: tomato;
+    background-color:var(--hero-text-color);
     border-radius: 50%;
+}
+
+.cocial-icon-item {
+    fill: #AFB1B8;
+}
+
+.cocial-icon-link:hover,
+.cocial-icon-link:focus {
+    background-color:var(--logo-web-color);
+}
+
+.cocial-icon-link:hover .cocial-icon-item,
+.cocial-icon-link:focus .cocial-icon-item {
+    fill:var(--hero-text-color);
 }
 
 /* Стили для Постоянные Клиенты */
@@ -414,21 +436,28 @@ body {
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
-
 }
 
 .client-logo-link {
     display: block;
-    width: 106px;
-    height: 60px;
-    margin: 16px 32px;
-    padding: 7px 33px 6.3px 32px;
- 
+    width: 100%;
+    height: 100%;
+    padding: 16px 32px; 
+    
+}
+
+.client-logo-link:hover .client-logo-icon,
+.client-logo-link:focus .client-logo-icon {
+    fill: var(--logo-web-color);    
+}
+
+.client-logo-link:focus,
+.client-logo-link:hover {
+    border: 1px solid var(--logo-web-color);
 }
 
 .client-logo-icon {
-    width: 41px;
-    height: 46.7px;
+    fill: #AFB1B8;
 }
 
 .clients-title {
@@ -441,7 +470,6 @@ body {
     margin-bottom: 50px;
 }
 
-
 /* Стили для Подвал */
 
 .footer {
@@ -450,7 +478,6 @@ body {
     padding-top: 60px;
     padding-bottom: 60px;
 }
-
 
 .logo-footer {
     color: var(--hero-text-color);
@@ -485,10 +512,6 @@ body {
 .down-tel {
     margin-top: 9px;
 }
-
-
-
-
 /* footer-icon */
 
 .footer .container {
@@ -514,7 +537,6 @@ body {
 .footer-cocial {
     display: flex;
     justify-content: center;
-
 }
 
 .footer-cocial-icon {
@@ -527,11 +549,22 @@ body {
 }
 
 .footer-icon-link {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background: tomato;
+    background-color: #ffffff10;
     border-radius: 50%;
+}
+
+.footer-icon-item {
+    fill: var(--hero-text-color);
+}
+
+.footer-icon-link:hover,
+.footer-icon-link:focus {
+    background-color: var(--logo-web-color); 
 }
 
 /* Это стили для Порфолио */
@@ -596,7 +629,7 @@ body {
 
 .bottom-card {
     padding: 20px 24px;
-    background: #FFFFFF;
+    background: var(--hero-text-color);
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
     border-bottom: 1px solid #EEEEEE;
